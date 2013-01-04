@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -e
+
+function system_check () {
+  if [[ "$(type -t curl)" != "file" ]]; then
+    echo "Curl missing" >&2
+    exit 1
+  fi
+}
+
+function download_cassandra () {
+  local dir="apache-cassandra-1.2.0-rc2"
+  local file="$dir-bin.tar.gz"
+  local url="http://mirror.metrocast.net/apache/cassandra/1.2.0/$file"
+
+  if [[ ! -d "apache-cassandra" ]]; then
+    if [[ ! -f $file ]]; then
+      curl -L $url > $file
+    fi
+
+    echo $dir
+    if [[ ! -d $dir ]]; then
+      tar -xzvf $file
+    fi
+
+    mv $dir "apache-cassandra"
+    rm $file
+  fi
+}
+
+system_check
+download_cassandra

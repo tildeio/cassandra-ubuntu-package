@@ -1,0 +1,12 @@
+# Vagrant
+.vagrant
+
+# Build files
+apache-cassandra*
+
+# Debian helpers
+build-stamp
+debian/files
+debian/cassandra
+debian/*.debhelper
+debian/*.substvars
