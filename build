@@ -31,4 +31,4 @@ function download_cassandra () {
 
 system_check
 download_cassandra
-dpkg-buildpackage -b
+dpkg-buildpackage -b -uc
