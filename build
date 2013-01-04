@@ -10,7 +10,7 @@ function system_check () {
 }
 
 function download_cassandra () {
-  local dir="apache-cassandra-1.2.0-rc2"
+  local dir="apache-cassandra-1.2.0"
   local file="$dir-bin.tar.gz"
   local url="http://mirror.metrocast.net/apache/cassandra/1.2.0/$file"
 
@@ -31,3 +31,4 @@ function download_cassandra () {
 
 system_check
 download_cassandra
+dpkg-buildpackage -b

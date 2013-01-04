@@ -1,7 +1,7 @@
 Source: cassandra
 Section: misc
 Priority: extra
-Maintainer: Eric Evans <eevans@apache.org>
+Maintainer: Carl Lerche <carl@tilde.io>
 Uploaders: Sylvain Lebresne <slebresne@apache.org>
 Build-Depends: debhelper (>= 5)
 Homepage: http://cassandra.apache.org
