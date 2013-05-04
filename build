@@ -2,6 +2,8 @@
 
 set -e
 
+version="1.2.4"
+
 function system_check () {
   if [[ "$(type -t curl)" != "file" ]]; then
     echo "Curl missing" >&2
@@ -10,9 +12,9 @@ function system_check () {
 }
 
 function download_cassandra () {
-  local dir="apache-cassandra-1.2.0"
+  local dir="apache-cassandra-$version"
   local file="$dir-bin.tar.gz"
-  local url="http://mirror.metrocast.net/apache/cassandra/1.2.0/$file"
+  local url="http://mirror.metrocast.net/apache/cassandra/$version/$file"
 
   if [[ ! -d "apache-cassandra" ]]; then
     if [[ ! -f $file ]]; then
